@@ -48,7 +48,5 @@ type  Bank struct {
 	ID           		primitive.ObjectID `bson:"_id,omitempty" json:"_id,omitempty"`
 	Nama_bank           string             `bson:"nama_bank,omitempty" json:"nama_bank,omitempty"`
 	Lokasi              string             `bson:"lokasi,omitempty" json:"lokasi,omitempty"`
-	Total_Tagihan   	Tagihan      	   `bson:"total_tagihan,omitempty" json:"total_tagihan,omitempty"`
 	Daftar              Penagih            `bson:"daftar,omitempty" json:"daftar,omitempty"`
-	Biodata      		Nasabah            `bson:"biodata,omitempty" json:"biodata,omitempty"`
 }

@@ -189,13 +189,11 @@ func GetAllTagihanFromNama_nasabah( nama_nasabah string, db *mongo.Database, col
 }
 
 // BANK
-func InsertBank(db *mongo.Database, col string, nama_bank string, lokasi string, total_tagihan model.Tagihan,  daftar model.Penagih, biodata model.Nasabah) (InsertedID interface{}) {
+func InsertBank(db *mongo.Database, col string, nama_bank string, lokasi string,  daftar model.Penagih) (InsertedID interface{}) {
 	var bank model.Bank
 	bank.Nama_bank = nama_bank
 	bank.Lokasi = lokasi
-	bank.Total_Tagihan = total_tagihan
 	bank.Daftar = daftar
-	bank.Biodata = biodata
 	return InsertOneDoc(db, col, bank)
 }
 
@@ -204,7 +202,7 @@ func GetBankFromNama_bank(nama_bank string, col string, db *mongo.Database) (ban
 	filter := bson.M{"nama_bank": nama_bank}
 	err := data_bank.FindOne(context.TODO(), filter).Decode(&bank)
 	if err != nil {
-		fmt.Printf("getBankFromNama_bank: %v\n", err)  
+		fmt.Printf("GetBankFromNama_bank: %v\n", err)  
 	}
 	return bank
 }

@@ -3,7 +3,6 @@ module github.com/Fedhira/be_tagihan
 go 1.20
 
 require (
-	github.com/Fedhira/Tagihan v0.0.7
 	github.com/aiteung/atdb v0.0.10
 	go.mongodb.org/mongo-driver v1.11.4
 )
