@@ -32,7 +32,7 @@ func InsertOneDoc(db *mongo.Database, collection string, doc interface{}) (inser
 }
 
 // GET ALL
-func GetAllTagihan(db *mongo.Database, col string) (bank model.Bank) {
+func GetAllBank(db *mongo.Database, col string) (bank []model.Bank) {
 	data := db.Collection(col)
 	filter := bson.M{}
 	cursor, err := data.Find(context.TODO(), filter)
@@ -46,7 +46,7 @@ func GetAllTagihan(db *mongo.Database, col string) (bank model.Bank) {
 	return
 }
 
-// func GetAllBank(db *mongo.Database, col string) (tagihan []model.Tagihan) {
+// func GetAllBank(db *mongo.Database, col string) (tagihan []model.Bank) {
 // 	data := db.Collection(col)
 // 	filter := bson.M{}
 // 	cursor, err := data.Find(context.TODO(), filter)
@@ -174,7 +174,7 @@ func GetTagihanFromNama_nasabah(nama_nasabah string, col string, db *mongo.Datab
 // 	return
 // }
 
-func GetAllTagihanFromNama_nasabah( nama_nasabah string, db *mongo.Database, col string) (tagihan model.Tagihan) {
+func GetAllTagihanFromNama_nasabah( nama_nasabah string, db *mongo.Database, col string) (tagihan []model.Tagihan) {
 	data_tagihan := db.Collection(col)
 	filter := bson.M{"biodata.nama_nasabah": nama_nasabah}
 	cursor, err := data_tagihan.Find(context.TODO(), filter)

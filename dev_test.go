@@ -131,7 +131,7 @@ func TestGetBankFromNama_bank(t *testing.T) {
 	fmt.Println(biodata)
 }
 
-// func TestGetAllTagihanF(t *testing.T) {
-// 	biodata := module.GetAllTagihan(module.MongoConn, "bank")
-// 	fmt.Println(biodata)
-// }
+func TestGetAllBank(t *testing.T) {
+	biodata := module.GetAllBank(module.MongoConn, "bank")
+	fmt.Println(biodata)
+}
